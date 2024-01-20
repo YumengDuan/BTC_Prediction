@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ classification }}</title>
+    </head>
+    <body>
+        <h1>Bit Coins in the type of {{ classification }}: {{ data_request }} {% if project %} Projection {% endif %} </h1>
+            <img src="{{ url_for('fig', data_request=data_request, classification=classification, project=project) }}"
+                 alt="Bit Coins in {{ classification }}">
+        <form action="/submit_projection" method="POST">
+            <p>Input a BTC value (eg. 65.0) you'd like to project to:
+                <input type="text" name="value" placeholder="00.0">
+                <input type="submit" value="Submit"></p>
+        </form>
+
+    </body>
+</html>
